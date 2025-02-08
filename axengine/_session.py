@@ -77,7 +77,7 @@ class InferenceSession:
             from ._axclrt import AXCLRTSession
             self._sess = AXCLRTSession(path_or_bytes, sess_options, provider_options, **kwargs)
         if self._provider == axengine_provider_name:
-            from ._axe import AXEngineSession
+            from ._ax_engine import AXEngineSession
             self._sess = AXEngineSession(path_or_bytes, sess_options, provider_options, **kwargs)
         if self._sess is None:
             raise RuntimeError(f"Create session failed with provider: {self._provider}")
